@@ -39,4 +39,26 @@ node evil-server.js
   
 
 
+## Demo Flow
 
+### Step 1 – View the legitimate login page
+1. Open the browser and go to:
+   http://localhost:8080
+
+2. Click the "Login" button.  
+   You will be redirected to the legitimate login page served by the origin server (port 3000).  
+   This shows the normal system behavior before the attack.
+
+### Step 2 – Let the cache expire
+Wait approximately 2–3 minutes so the cached response expires (based on the configured cache time).
+
+### Step 3 – Perform the poisoning attack
+Send a poisoned request using:
+
+curl -H "X-Forwarded-Host: localhost:4000" http://localhost:8080
+
+### Step 4 – View the malicious login page
+1. Open the browser and go to:
+   http://localhost:8080
+   
+2. Click the "Login" button.  
