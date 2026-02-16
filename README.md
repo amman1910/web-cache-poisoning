@@ -31,9 +31,9 @@ node server.js
 node evil-server.js
 
 ### 3) Start the malicious server
-from the proxy-server folder- cd proxy-server
-docker build -t cache-proxy .
-docker run -p 8080:8080 cache-proxy
+- from the proxy-server folder- cd proxy-server
+- docker build -t cache-proxy .
+- docker run -p 8080:8080 cache-proxy
 
 
 
